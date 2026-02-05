@@ -1,0 +1,11 @@
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+export { default as Search } from './Search';
+export { default as SneakersCategory } from './SneakersCategory';
+export { default as ProductCard } from './ProductCard';
+export { default as ProductList } from './ProductList';
+export { default as DetailsHeader } from './DetailsHeader';
+export { default as SneakersCardDetail } from './SneakersCardDetail';
+export { default as SneakersDescription } from './SneakersDescription';
+export { default as WhatsAppButton } from './WhatsAppButton';
+export { default as Onboarding } from './Onboarding';

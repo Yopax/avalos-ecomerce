@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f23;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <!-- Fondo -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  <!-- Círculos decorativos -->
+  <circle cx="650" cy="100" r="150" fill="url(#accentGrad)"/>
+  <circle cx="100" cy="500" r="200" fill="url(#accentGrad)"/>
+  <!-- Zapatilla estilizada -->
+  <g transform="translate(200, 200)">
+    <ellipse cx="200" cy="150" rx="180" ry="50" fill="#2d2d44" opacity="0.5"/>
+    <path d="M50,100 Q100,20 200,30 Q300,40 350,100 L340,130 Q280,90 200,80 Q120,70 60,130 Z" fill="#8b5cf6"/>
+    <path d="M60,130 Q120,90 200,85 Q280,80 340,130 L330,150 Q270,120 200,115 Q130,110 70,150 Z" fill="#a78bfa"/>
+  </g>
+</svg>
