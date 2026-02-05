@@ -1,6 +1,4 @@
 "use client";
-
-import { MessageCircle } from "lucide-react";
 import { Product } from "@/types";
 import Image from "next/image";
 

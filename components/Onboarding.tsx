@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Onboarding() {
-  const [fadeOut] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);  // Added setFadeOut to the destructuring
   const [isVisible, setIsVisible] = useState(false);
 
   // Fade in al montar el componente
@@ -15,19 +16,19 @@ export default function Onboarding() {
     return () => clearTimeout(timer);
   }, []);
 
-  // TEMPORALMENTE DESACTIVADO PARA MAQUETACIÓN
-  // useEffect(() => {
-  //   const fadeTimer = setTimeout(() => {
-  //     setFadeOut(true);
-  //   }, 4000);
-  //   const navigateTimer = setTimeout(() => {
-  //     router.push('/home');
-  //   }, 5000);
-  //   return () => {
-  //     clearTimeout(fadeTimer);
-  //     clearTimeout(navigateTimer);
-  //   };
-  // }, [router]);
+    const router = useRouter();
+   useEffect(() => {
+     const fadeTimer = setTimeout(() => {
+       setFadeOut(true);
+     }, 4000);
+     const navigateTimer = setTimeout(() => {
+       router.push('/home');
+     }, 5000);
+     return () => {
+       clearTimeout(fadeTimer);
+       clearTimeout(navigateTimer);
+     };
+   }, [router]);
 
   return (
     <div

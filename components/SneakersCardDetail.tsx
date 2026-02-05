@@ -15,11 +15,12 @@ export default function SneakersCardDetail({
     <div className="">
       {/* Imagen del producto */}
       <div className="relative h-64 bg-linear-to-br from-gray-50 to-gray-100 rounded-3xl flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src={product.image}
           alt={product.name}
-          className="object-contain"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          width={400}
+          height={100}
+          objectFit="contain"
         />
       </div>
 

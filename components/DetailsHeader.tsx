@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ChevronLeft, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 
 interface DetailsHeaderProps {

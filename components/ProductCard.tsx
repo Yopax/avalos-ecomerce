@@ -15,11 +15,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="bg-white rounded-2xl overflow-hidden">
         {/* Imagen del producto */}
         <div className="relative h-37.5  w-full bg-linear-to-br from-gray-50 to-gray-100 rounded-tl-2xl rounded-tr-2xl flex items-center justify-center overflow-hidden">
-          <img
+          <Image
             src={product.image}
             alt={product.name}
-            className="object-contain"
+            width={200}
+            height={150}
             
+            objectFit="contain"
           />
         </div>
 
