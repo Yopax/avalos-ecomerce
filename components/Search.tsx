@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Search as SearchIcon, Mic } from 'lucide-react';
+import Image from 'next/image';
 
 interface SearchProps {
   onSearch: (query: string) => void;
@@ -52,23 +53,29 @@ export default function Search({ onSearch, userName = 'Usuario' }: SearchProps) 
   };
 
   return (
-    <div className="px-4 py-4">
+    <div className="">
       {/* Saludo */}
-      <p className="text-gray-500 text-sm">Hello, {userName}</p>
-      <h2 className="text-xl font-semibold text-gray-900 mt-1 mb-4">
+      <p className="text-black font-medium text-base">Hello,</p>
+      <h2 className="text-2xl font-bold text-black mt-1.25 mb-5.75 letra">
         What are you looking for today?
       </h2>
 
       {/* Barra de búsqueda */}
       <form onSubmit={handleSearch} className="relative">
-        <div className="flex items-center bg-gray-100 rounded-2xl px-4 py-3 gap-3">
-          <SearchIcon className="w-5 h-5 text-gray-400" />
+        <div className="flex items-center border border-[#bababa] rounded-[15px] px-[9.5px] py-[10.5px] gap-3">
+          <Image 
+            src="/icons/search.svg"
+            alt="Search Icon"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search"
-            className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400"
+            className="flex-1 bg-transparent font-light outline-none text-[#BABABA] placeholder-[#BABABA]"
           />
           <button
             type="button"
@@ -80,7 +87,13 @@ export default function Search({ onSearch, userName = 'Usuario' }: SearchProps) 
             }`}
             aria-label="Búsqueda por voz"
           >
-            <Mic className="w-5 h-5" />
+            <Image 
+            src="/icons/mic.svg"
+            alt="Mic Icon"
+            width={24}
+            height={24}
+            className="w-6 h-6"
+          />
           </button>
         </div>
       </form>

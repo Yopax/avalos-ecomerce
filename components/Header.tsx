@@ -2,25 +2,23 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className="flex items-center justify-between px-4 py-3">
+    <header className="sticky top-0 z-50 bg-white">
+      <div className="flex items-center justify-between py-6.25">
         {/* Logo */}
-        <Link href="/home" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-linear-to-br from-purple-600 to-blue-500 rounded-xl flex items-center justify-center">
-            <ShoppingBag className="w-5 h-5 text-white" />
-          </div>
+        <Link href="/home" className="flex w-8.5 h-8.5 rounded-full border text-center items-center gap-2">
+          <p className='w-full font-bold'>A</p>
         </Link>
 
         {/* Nombre de la empresa */}
         <Link href="/home">
-          <h1 className="text-xl font-bold text-gray-900 tracking-wide">
-            AVALOS
+          <h1 className="text-xl letra font-bold text-black">
+            Avalos
           </h1>
         </Link>
 
@@ -30,11 +28,13 @@ export default function Header() {
           className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
           aria-label="Menú"
         >
-          {isMenuOpen ? (
-            <X className="w-6 h-6 text-gray-700" />
-          ) : (
-            <Menu className="w-6 h-6 text-gray-700" />
-          )}
+          <Image
+            src="/icons/menu-variant.svg"
+            alt="Menú"
+            width={24}
+            height={24}
+            className={`w-6 h-6 text-gray-700 ${isMenuOpen ? 'rotate-90' : ''} transition-transform duration-200`}
+          />
         </button>
       </div>
 

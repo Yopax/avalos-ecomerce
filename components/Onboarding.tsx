@@ -1,71 +1,60 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 export default function Onboarding() {
-  const router = useRouter();
-  const [fadeOut, setFadeOut] = useState(false);
+  const [fadeOut] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
+  // Fade in al montar el componente
   useEffect(() => {
-    // Después de 4 segundos, iniciar el fadeout
-    const fadeTimer = setTimeout(() => {
-      setFadeOut(true);
-    }, 4000);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 50); // Pequeño delay para asegurar que el componente esté montado
 
-    // Después de 5 segundos, navegar al Home
-    const navigateTimer = setTimeout(() => {
-      router.push('/home');
-    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(navigateTimer);
-    };
-  }, [router]);
+  // TEMPORALMENTE DESACTIVADO PARA MAQUETACIÓN
+  // useEffect(() => {
+  //   const fadeTimer = setTimeout(() => {
+  //     setFadeOut(true);
+  //   }, 4000);
+  //   const navigateTimer = setTimeout(() => {
+  //     router.push('/home');
+  //   }, 5000);
+  //   return () => {
+  //     clearTimeout(fadeTimer);
+  //     clearTimeout(navigateTimer);
+  //   };
+  // }, [router]);
 
   return (
     <div
-      className={`fixed inset-0 z-100 transition-opacity duration-1000 ${
-        fadeOut ? 'opacity-0' : 'opacity-100'
+      className={`fixed inset-0  z-100 transition-opacity duration-3000 ${
+        fadeOut ? 'opacity-0' : isVisible ? 'opacity-100' : 'opacity-8'
       }`}
     >
-      {/* Imagen de fondo */}
+      {/* Imagen de fondo con zoom */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover "
         style={{
-          backgroundImage: "url('/images/onboarding-bg.svg')",
+          backgroundImage: "url('/images/bg-onboarding.png')",
         }}
       />
 
-      {/* Gradiente overlay */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/30" />
-
       {/* Contenido centrado */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">
-        {/* Logo animado */}
-        <div className="mb-6 animate-bounce-slow">
-          <div className="w-20 h-20 bg-white/10 backdrop-blur-lg rounded-3xl flex items-center justify-center border border-white/20">
-            <span className="text-4xl">👟</span>
-          </div>
-        </div>
 
         {/* Nombre de la empresa */}
-        <h1 className="text-5xl md:text-6xl font-bold text-white tracking-wider mb-4 animate-fade-in">
-          AVALOS
+        <h1 className="text-[70px] letra  items-center  flex md:text-6xl font-bold text-white tracking-[0.64px] h-14 animate-fade-in">
+          Avalos
         </h1>
 
         {/* Slogan */}
-        <p className="text-white/80 text-lg md:text-xl font-light tracking-wide animate-fade-in-delay">
+        <p className="text-white leading-5 shadow-2xl text-sm md:text-xl font-semibold tracking-[0.8px] animate-fade-in-delay">
           Special footwear for everyday use
         </p>
-
-        {/* Indicador de carga */}
-        <div className="mt-12 flex gap-2">
-          <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse" />
-          <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse delay-100" />
-          <span className="w-2 h-2 bg-white/60 rounded-full animate-pulse delay-200" />
-        </div>
       </div>
     </div>
   );

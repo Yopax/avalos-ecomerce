@@ -10,7 +10,7 @@ const seedProducts = [
     price: 150,
     rating: 4.8,
     description: 'Las Nike Air Max 270 ofrecen la mayor bolsa de aire hasta la fecha para una comodidad durante todo el día. Diseñadas con un estilo lifestyle, combinan los mejores elementos de los modelos anteriores de Air Max para crear un calzado moderno y versátil.',
-    image: 'https://placehold.co/400x400/f3f4f6/8b5cf6?text=Nike+Air+Max',
+    image: 'https://i.imgur.com/70mJEaX.jpg',
     category: 'Sneakers',
     sizes: [38, 39, 40, 41, 42, 43, 44],
     colors: ['Negro', 'Blanco', 'Rojo'],

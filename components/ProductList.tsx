@@ -33,8 +33,8 @@ export default function ProductList({ products, loading }: ProductListProps) {
   }
 
   return (
-    <div className="px-4 py-4 pb-24">
-      <div className="grid grid-cols-2 gap-4">
+    <div className="py-5 pb-12">
+      <div className="grid grid-cols-2 gap-5">
         {products.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}

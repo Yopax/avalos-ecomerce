@@ -63,7 +63,7 @@ export default function SneakersDetailsPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white pb-24">
+    <div className="mx-6.25 pb-24">
       <DetailsHeader />
       <SneakersCardDetail product={product} />
       <SneakersDescription product={product} />

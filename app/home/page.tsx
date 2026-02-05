@@ -47,7 +47,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen  mx-6.25">
       <Header />
       <Search onSearch={handleSearch} userName="Grace" />
       <SneakersCategory

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Star } from 'lucide-react';
-import { Product } from '@/types';
+import Image from "next/image";
+import Link from "next/link";
+import { Star } from "lucide-react";
+import { Product } from "@/types";
 
 interface ProductCardProps {
   product: Product;
@@ -12,34 +12,30 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/sneakers/${product._id}`} className="block">
-      <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+      <div className="bg-white rounded-2xl overflow-hidden">
         {/* Imagen del producto */}
-        <div className="relative h-36 bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
-          <Image
+        <div className="relative h-37.5  w-full bg-linear-to-br from-gray-50 to-gray-100 rounded-tl-2xl rounded-tr-2xl flex items-center justify-center overflow-hidden">
+          <img
             src={product.image}
             alt={product.name}
-            fill
-            className="object-contain p-2"
-            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-contain"
+            
           />
         </div>
 
         {/* Descripción del producto */}
-        <div className="p-3">
-          <p className="text-xs text-purple-600 font-medium uppercase tracking-wide">
-            {product.brand}
-          </p>
-          <h3 className="text-sm font-semibold text-gray-900 mt-1 truncate">
+        <div className="py-3 px-3 border border-gray-200 rounded-bl-2xl rounded-br-2xl">
+          <h3 className=" text-black truncate">
             {product.name}
           </h3>
 
           <div className="flex items-center justify-between mt-2">
-            <p className="text-base font-bold text-gray-900">
+            <p className="text-xs font-bold text-black">
               ${product.price}
             </p>
             <div className="flex items-center gap-1">
-              <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              <span className="text-xs text-gray-500">{product.rating}</span>
+              <Star className="w-3.5 h-3.5 fill-[#ffc120] text-yellow-400" />
+              <span className="text-xs text-black">{product.rating}</span>
             </div>
           </div>
         </div>
