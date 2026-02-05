@@ -35,11 +35,11 @@ Me interesa el siguiente producto:
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-transparent p-4 mb-5 safe-area-bottom">
+    <div className="fixed bottom-0 left-0 right-0 bg-transparent flex items-center justify-center p-4 mb-5 safe-area-bottom">
       <button
         onClick={handleBuyClick}
         disabled={product.stock === 0}
-        className={`w-full py-4 rounded-2xl font-semibold text-white flex items-center justify-center gap-3 transition-all ${
+        className={`w-[94%] py-4 rounded-2xl font-semibold text-white flex items-center justify-center gap-3 transition-all ${
           product.stock > 0 ? "bg-[#ffdf20]" : "bg-gray-300 cursor-not-allowed"
         }`}
       >
