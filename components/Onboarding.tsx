@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Onboarding() {
   const [fadeOut, setFadeOut] = useState(false);  // Added setFadeOut to the destructuring
@@ -37,11 +38,13 @@ export default function Onboarding() {
       }`}
     >
       {/* Imagen de fondo con zoom */}
-      <div
-        className="absolute inset-0 bg-cover "
-        style={{
-          backgroundImage: "url('/images/bg-onboarding.png')",
-        }}
+      <Image
+        src="/images/bg-onboarding.png"
+        alt="Background"
+        fill={true}
+        objectFit="cover"
+        objectPosition="center 10%"
+        className="absolute inset-0 "
       />
 
       {/* Contenido centrado */}
